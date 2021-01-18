@@ -1,0 +1,54 @@
+body {
+  overflow-x: hidden!important;
+  scroll-behavior: smooth;
+}
+
+.jumbotron {
+  color: white;
+  height: 400px;
+  background: linear-gradient(rgba(14, 253, 253, 0.4), rgba(0, 0, 0, 0.9)),
+    url(./assets/jumbo-background.jpg) center !important;
+}
+
+.card-img-top {
+  min-height: 400px;
+  object-fit: contain !important;
+}
+
+.card {
+  border-radius: 10px !important;
+  box-shadow: 0 0 15px rgb(124, 123, 123) !important;
+  transition: transform 0.1s ease-in-out;
+}
+
+.card:hover {
+  transform: scale(1.05);
+}
+
+.skillsCard {
+  text-align: center;
+  width: 200px !important;
+}
+
+@media only screen and (max-width: 880px) {
+  .jumbotron {
+    height: 300px;
+  }
+  .skillsCard {
+    width: 150px !important;
+  }
+  .projectCard {
+    height: auto;
+    width: 400px !important;
+  }
+}
+
+.icons {
+  height: 30px;
+}
+
+@media only screen and (max-width: 1200px) {
+  .projectCard {
+    width: 400px !important;
+  }
+}
