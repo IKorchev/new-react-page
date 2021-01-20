@@ -2,15 +2,19 @@ import React from "react"
 
 const Skill = ({ skill }) => {
   return (
-    <div className="row justify-content-center my-5" id="projects">
+    <div className="row justify-content-center my-4 " id="projects">
+      <h1 className="display-6 text-center">Skills</h1>
       {skill.map((el) => {
-        return (
-          <div className="card col-md-1 mx-5 my-3  skillsCard">
-            <img className="card-img" src={el.image}></img>
-            <h2 className="card-title">{el.name}</h2>
-          </div>
-        )
-      })}
+        
+          return (
+            <div className="skillsCard mt-5">
+              <img className="img" src={el.image} alt={el.alt}></img>
+              <h6 className="card-title mt-2">{el.title}</h6>
+            </div>
+          )
+        } 
+        
+      )}
     </div>
   )
 }
