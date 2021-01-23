@@ -2,59 +2,127 @@ body {
   overflow-x: hidden !important;
   scroll-behavior: smooth;
 }
+:root {
+  --color-blue: rgb(198, 242, 255);
+  --color-pink: rgb(255, 211, 198);
+}
+
+.navbar {
+  justify-content: baseline !important;
+  border-bottom: 2px solid var(--color-blue);
+  background: rgba(0, 0, 0, 0.5) !important;
+  transition: all 0.5s ease-in-out;
+}
+.navbar-scroll {
+  transform: translateY(-10px);
+  padding: 0 0 0 0 !important;
+  transition: all 0.5s ease-in-out;
+}
+.nav-link {
+  color: var(--color-blue);
+  padding-left: 1.5rem !important;
+  font-size: x-large;
+}
+.nav-link-scroll {
+  padding-top: 0.5rem !important;
+  padding-bottom: 0.5rem !important;
+}
+.nav-link:hover {
+  color: var(--color-pink) !important;
+}
+
+.map {
+  height: 250px;
+  width: 300px;
+}
 
 .jumbotron {
   font-family: "Kanit", sans-serif;
-  color: white;
-  height: 400px;
-  background: linear-gradient(rgba(14, 125, 253, 0.4), rgba(0, 0, 0, 0.9)),
-    url(./assets/jumbo-background.jpg) center !important;
+  height: 600px;
+  background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(255, 255, 255, 0.267)), url(./assets/london-skyline.jpg) !important;
+  background-size: cover !important;
+  background-position-y: 20% !important;
 }
 
+.jumbotron h1,
+p {
+  color: #ffffff !important;
+}
+
+.main-div {
+  background: linear-gradient(90deg, rgba(255, 255, 255, 1) 0%, var(--color-blue) 100%) !important;
+}
+
+.projectCard {
+  background: linear-gradient(240deg, rgb(255, 255, 255) 76%, var(--color-pink) 95%) !important;
+  width: 400px !important;
+  border-radius: 0px !important;
+  box-shadow: 0 0 20px 2px rgb(216, 216, 216) !important;
+  transition: transform 0.1s ease-in-out;
+}
 .card-img-top {
   height: 300px;
   object-fit: contain !important;
 }
-
-.img {
-  height:50px;
-}
-
-.projectCard {
-  background: linear-gradient(
-    90deg,
-    rgba(255, 255, 255, 0.158) 17%,
-    rgb(236, 236, 236) 79%
-  ) !important;
-  width: 400px !important;
-  border-radius: 10px !important;
-  box-shadow: 0 0 15px rgb(124, 123, 123) !important;
-  transition: transform 0.1s ease-in-out;
-}
-
 .projectCard:hover {
-  transform: scale(1.02);
+  transform: scale(1.01);
 }
-
+.projectCard p {
+  color: black !important;
+}
+.btn {
+  background-color: var(--color-blue) !important;
+}
+.btn:hover {
+  background-color: white !important;
+}
+.btn:focus {
+  outline: none !important;
+  border: none !important;
+}
 .skillsCard {
-  margin-top: 2rem!important;
+  margin-top: 2rem !important;
   text-align: center;
   width: 100px !important;
   height: 80px;
 }
 
+.img {
+  height: 50px;
+}
+
+.footer p {
+  font-size: smaller;
+  color: darkgrey !important;
+}
+
 @media only screen and (max-width: 880px) {
-  .jumbotron {
-    height: 300px;
+  .navbar {
+    justify-content: center !important;
   }
+  .nav-link {
+    margin: 0 !important;
+    font-size: x-large;
+    transition: all 1s ease;
+  }
+  .jumbotron {
+    height: 400px;
+  }
+  .jumbotron h1,
+  p {
+    text-align: center !important;
+  }
+  .lead {
+    font-size: medium !important;
+  }
+
   .projectCard {
     height: auto;
     width: 400px !important;
   }
   .skillsCard {
-    margin-top: 2rem!important;
+    margin-top: 2rem !important;
   }
-  
 }
 
 .icons {
@@ -70,6 +138,6 @@ body {
     width: 400px !important;
   }
   .skillsCard {
-    margin-top: 2rem!important;
+    margin-top: 2rem !important;
   }
 }

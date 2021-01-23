@@ -72,7 +72,7 @@ const Projects = () => {
   ]
 
   return (
-    <div className="container py-5" id="projects">
+    <div className="container py-5 projects-div" id="projects">
       <ProjectCards projectCards={projectCards} />
       <Skill skill={skill} />
     </div>

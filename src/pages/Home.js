@@ -8,10 +8,10 @@ const Home = () => {
   }
 
   return (
-    <div id="home" className="bg-light shadow pb-3">
+    <div id="home" className="main-div bg-light shadow pb-3">
       <Jumbotron text={text} />
-      <div id="home" className="container bg-light shadow rounded pb-3">
-      <Projects />
+      <div className="container bg-light shadow rounded pb-3">
+        <Projects />
       </div>
     </div>
   )
