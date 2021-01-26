@@ -15,39 +15,48 @@ const Contact = () => {
       <h1 className="display-6 text-center my-4">Contact</h1>
       <div className="row justify-content-center">
         <div className="col-sm-auto mt-3">
-          <form action="/sent" method="post" className="form-control d-flex flex-column">
+          <form action="/sent" method="post" className=" d-flex flex-column">
             <h3 className="text-center my-3">Contact Form</h3>
-            <label htmlFor="firstName">Name</label>
-            <input
-              required
-              value={nameInput}
-              name="name"
-              type="text"
-              id="firstName"
-              placeholder="Name"
-              onChange={(e) => setNameInput(e.target.value)}
-            />
-            <label htmlFor="lastName">Email</label>
-            <input
-              required
-              value={emailInput}
-              name="email"
-              type="text"
-              id="lastName"
-              placeholder="email@example.com"
-              onChange={(e) => setEmailInput(e.target.value)}
-            />
-            <label htmlFor="textarea">Message</label>
-            <textarea
-              required
-              value={textInput}
-              name="message"
-              placeholder="Your message"
-              id="textarea"
-              cols="50"
-              rows="4"
-              onChange={(e) => setTextInput(e.target.value)}
-            />
+            <div className="form-floating mb-3">
+              <input
+                className="form-control"
+                required
+                value={nameInput}
+                name="name"
+                type="text"
+                id="firstName"
+                placeholder="Name"
+                onChange={(e) => setNameInput(e.target.value)}
+              />
+              <label htmlFor="firstName">Name</label>
+            </div>
+            <div className="form-floating mb-3">
+              <input
+                required
+                value={emailInput}
+                name="email"
+                type="text"
+                id="lastName"
+                placeholder="email@example.com"
+                className="form-control"
+                onChange={(e) => setEmailInput(e.target.value)}
+              />
+              <label htmlFor="lastName">Email</label>
+            </div>
+            <div className="form-floating ">
+              <textarea
+                className="form-control"
+                required
+                value={textInput}
+                name="message"
+                placeholder="Your message"
+                id="textarea"
+                cols="50"
+                rows="5"
+                onChange={(e) => setTextInput(e.target.value)}
+              />
+              <label htmlFor="textarea">Message</label>
+            </div>
             <input type="submit" className="btn btn-info mt-2" />
           </form>
         </div>

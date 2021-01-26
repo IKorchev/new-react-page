@@ -24,6 +24,7 @@ function App() {
       }
     }
   }
+
   document.addEventListener("scroll", handleScroll)
 
   return (

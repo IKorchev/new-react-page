@@ -7,6 +7,9 @@ body {
   --color-pink: rgb(255, 211, 198);
 }
 
+#textarea {
+  height: 100px;
+}
 .navbar {
   justify-content: baseline !important;
   border-bottom: 2px solid var(--color-blue);
@@ -132,6 +135,7 @@ p {
 .icons:hover {
   opacity: 0.7;
 }
+
 
 @media only screen and (max-width: 1200px) {
   .projectCard {
