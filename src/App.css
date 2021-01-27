@@ -1,7 +1,24 @@
 body {
-  overflow-x: hidden !important;
   scroll-behavior: smooth;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
+
+body::-webkit-scrollbar {
+  width: 10px;
+}
+
+body::-webkit-scrollbar-track {
+  background: var(--color-pink);
+}
+
+body::-webkit-scrollbar-thumb {
+  background-color: var(--color-blue);
+}
+
 :root {
   --color-blue: rgb(198, 242, 255);
   --color-pink: rgb(255, 211, 198);
@@ -13,22 +30,16 @@ body {
 .navbar {
   justify-content: baseline !important;
   border-bottom: 2px solid var(--color-blue);
-  background: rgba(0, 0, 0, 0.5) !important;
-  transition: all 0.5s ease-in-out;
+  transition: all 0.6s ease-in-out;
 }
 .navbar-scroll {
-  transform: translateY(-10px);
-  padding: 0 0 0 0 !important;
-  transition: all 0.5s ease-in-out;
+  transform: translateY(-68px);
+  opacity: 0.2;
 }
 .nav-link {
   color: var(--color-blue);
   padding-left: 1.5rem !important;
   font-size: x-large;
-}
-.nav-link-scroll {
-  padding-top: 0.5rem !important;
-  padding-bottom: 0.5rem !important;
 }
 .nav-link:hover {
   color: var(--color-pink) !important;
@@ -42,25 +53,25 @@ body {
 .jumbotron {
   font-family: "Kanit", sans-serif;
   height: 600px;
-  background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(255, 255, 255, 0.267)), url(./assets/london-skyline.jpg) !important;
+  background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.2)), url(./assets/london-skyline.jpg) !important;
   background-size: cover !important;
-  background-position-y: 20% !important;
+  background-position-y: 80% !important;
 }
-
-.jumbotron h1,
-p {
-  color: #ffffff !important;
+#typed1 {
+  color: var(--color-blue);
+}
+#typed2 {
+  color: var(--color-pink);
 }
 
 .main-div {
-  background: linear-gradient(90deg, rgba(255, 255, 255, 1) 0%, var(--color-blue) 100%) !important;
+  background: linear-gradient(0deg, rgb(255, 255, 255) 0%, rgb(255, 255, 255) 50%) !important;
 }
 
 .projectCard {
-  background: linear-gradient(240deg, rgb(255, 255, 255) 76%, var(--color-pink) 95%) !important;
-  width: 400px !important;
+  width: 420px !important;
   border-radius: 0px !important;
-  box-shadow: 0 0 20px 2px rgb(216, 216, 216) !important;
+  box-shadow: 0 0 15px 2px var(--color-blue) !important;
   transition: transform 0.1s ease-in-out;
 }
 .card-img-top {
@@ -69,9 +80,6 @@ p {
 }
 .projectCard:hover {
   transform: scale(1.01);
-}
-.projectCard p {
-  color: black !important;
 }
 .btn {
   background-color: var(--color-blue) !important;
@@ -84,7 +92,6 @@ p {
   border: none !important;
 }
 .skillsCard {
-  margin-top: 2rem !important;
   text-align: center;
   width: 100px !important;
   height: 80px;
@@ -98,14 +105,57 @@ p {
   font-size: smaller;
   color: darkgrey !important;
 }
+.icons {
+  height: 30px;
+}
+
+.icons:hover {
+  opacity: 0.7;
+}
+
+#backtotopButton {
+  color: black;
+  cursor: pointer;
+}
+
+#downarrow {
+  cursor: pointer;
+  position: absolute;
+  left: 50%;
+  top: 56%;
+}
+
+/* MEDIA QUERIES */
+
+@media only screen and (max-width: 300px) {
+  .nav-link {
+    padding: 0 !important;
+    margin: 0 10px !important;
+    font-size: 0.8rem !important;
+    transition: all 1s ease;
+  }
+  #downarrow {
+    top: 46%;
+  }
+}
+@media only screen and (max-width: 500px) {
+  .nav-link {
+    padding: 0 !important;
+    margin: 0 10px !important;
+    font-size: 12px;
+    transition: all 1s ease;
+  }
+  .map {
+    width: 200px !important;
+    height: 200px;
+  }
+}
 
 @media only screen and (max-width: 880px) {
-  .navbar {
-    justify-content: center !important;
-  }
   .nav-link {
-    margin: 0 !important;
-    font-size: x-large;
+    padding: 15px 0 !important;
+    margin: 0 16px;
+    font-size: 15px;
     transition: all 1s ease;
   }
   .jumbotron {
@@ -116,32 +166,18 @@ p {
     text-align: center !important;
   }
   .lead {
-    font-size: medium !important;
+    font-size: small !important;
   }
 
-  .projectCard {
-    height: auto;
-    width: 400px !important;
-  }
   .skillsCard {
     margin-top: 2rem !important;
   }
+  #downarrow {
+    position: absolute;
+    left: 47%;
+    top: 38%;
+  }
 }
-
-.icons {
-  height: 30px;
-}
-
-.icons:hover {
-  opacity: 0.7;
-}
-
 
 @media only screen and (max-width: 1200px) {
-  .projectCard {
-    width: 400px !important;
-  }
-  .skillsCard {
-    margin-top: 2rem !important;
-  }
 }

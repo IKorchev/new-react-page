@@ -2,11 +2,11 @@ import React from "react"
 
 const ProjectCards = ({ projectCards }) => {
   return (
-    <div className="row justify-content-center" id="projects">
-      <h1 className="display-4 text-center mb-3">Projects</h1>
+    <>
+      <h1 className="display-4 text-center my-5">Projects</h1>
       {projectCards.map((project) => {
         return (
-          <div className="card col-xl-3 projectCard m-3 align-items-center text-center">
+          <div className="card col-xl-3 projectCard m-3 align-items-center text-center rounded">
             <a href={project.hosted} target="_blank" rel="noreferrer" target="_blank">
               <img className="card-img-top" src={project.image} alt={project.alt} />
             </a>
@@ -21,11 +21,10 @@ const ProjectCards = ({ projectCards }) => {
               </a>
             </div>
           </div>
-          
         )
       })}
-    </div>
-  )
+    </>
+   )
 }
 
 export default ProjectCards

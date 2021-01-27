@@ -11,8 +11,8 @@ const Contact = () => {
   const [textInput, setTextInput] = useState("")
 
   return (
-    <div className="container-fluid bg-light shadow pb-5" id="contact">
-      <h1 className="display-6 text-center my-4">Contact</h1>
+    <div className="container-fluid py-2" id="contact">
+      <h1 className="display-6 text-center my-5">Contact</h1>
       <div className="row justify-content-center">
         <div className="col-sm-auto mt-3">
           <form action="/sent" method="post" className=" d-flex flex-column">

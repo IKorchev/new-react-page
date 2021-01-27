@@ -11,6 +11,7 @@ import JavaScript from "../assets/javascript.svg"
 import CSS from "../assets/css.svg"
 import ReactIcon from "../assets/structure.svg"
 import BootstrapIcon from "../assets/bootstrap-fill.svg"
+import Backtotop from "../components/backtotop"
 
 const Projects = () => {
   const projectCards = [
@@ -72,9 +73,9 @@ const Projects = () => {
   ]
 
   return (
-    <div className="container py-5 projects-div" id="projects">
-      <ProjectCards projectCards={projectCards} />
+    <div className="row gx-0 justify-content-center" id="projects">
       <Skill skill={skill} />
+      <ProjectCards projectCards={projectCards} />
     </div>
   )
 }
