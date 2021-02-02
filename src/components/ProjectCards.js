@@ -6,7 +6,7 @@ const ProjectCards = ({ projectCards }) => {
       <h1 className="display-4 text-center my-5">Projects</h1>
       {projectCards.map((project) => {
         return (
-          <div className="card col-xl-3 projectCard m-3 align-items-center text-center rounded">
+          <div key={project.id} className="card col-xl-3 projectCard m-3 align-items-center text-center rounded">
             <a href={project.hosted} target="_blank" rel="noreferrer" target="_blank">
               <img className="card-img-top" src={project.image} alt={project.alt} />
             </a>
@@ -17,7 +17,7 @@ const ProjectCards = ({ projectCards }) => {
                 View project
               </a>
               <a href={project.code} target="_blank" rel="noreferrer" className="btn btn-info mx-2">
-                View Code <i class="fas fa-code fa-sm"></i>
+                View Code <i className="fas fa-code fa-sm"></i>
               </a>
             </div>
           </div>

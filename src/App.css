@@ -142,7 +142,7 @@ body::-webkit-scrollbar-thumb {
   .nav-link {
     padding: 0 !important;
     margin: 0 10px !important;
-    font-size: 12px;
+    font-size: 1.2rem;
     transition: all 1s ease;
   }
   .map {
@@ -153,9 +153,8 @@ body::-webkit-scrollbar-thumb {
 
 @media only screen and (max-width: 880px) {
   .nav-link {
-    padding: 15px 0 !important;
+    padding: 10px 0 !important;
     margin: 0 16px;
-    font-size: 15px;
     transition: all 1s ease;
   }
   .jumbotron {
