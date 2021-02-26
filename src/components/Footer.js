@@ -1,10 +1,11 @@
 import React from "react"
-import Backtotop from './backtotop'
+import Backtotop from "./backtotop"
+
 const Footer = () => {
   return (
-    <div className="footer text-center bg-light p-3 mt-1">
-      <Backtotop/>
-      <p className="lead">
+    <div className='footer text-center bg-light p-3 mt-1'>
+      <Backtotop />
+      <p className='text-info'>
         &copy; Ivaylo Korchev <br /> 2021
       </p>
     </div>

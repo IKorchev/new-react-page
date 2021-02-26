@@ -45,15 +45,11 @@ body::-webkit-scrollbar-thumb {
   color: var(--color-pink) !important;
 }
 
-.map {
-  height: 250px;
-  width: 300px;
-}
-
 .jumbotron {
   font-family: "Kanit", sans-serif;
   height: 600px;
-  background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.2)), url(./assets/london-skyline.jpg) !important;
+  background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.2)),
+    url(./assets/london-skyline.jpg) !important;
   background-size: cover !important;
   background-position-y: 80% !important;
 }
@@ -65,7 +61,11 @@ body::-webkit-scrollbar-thumb {
 }
 
 .main-div {
-  background: linear-gradient(0deg, rgb(255, 255, 255) 0%, rgb(255, 255, 255) 50%) !important;
+  background: linear-gradient(
+    0deg,
+    rgb(255, 255, 255) 0%,
+    rgb(255, 255, 255) 50%
+  ) !important;
 }
 
 .projectCard {
@@ -103,7 +103,7 @@ body::-webkit-scrollbar-thumb {
 
 .footer p {
   font-size: smaller;
-  color: darkgrey !important;
+  color: black !important;
 }
 .icons {
   height: 30px;
