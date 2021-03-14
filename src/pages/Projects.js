@@ -1,5 +1,4 @@
 import React from "react"
-
 import ProjectCards from "../components/ProjectCards"
 import Skill from "../components/Skill"
 
@@ -14,13 +13,13 @@ import JavaScript from "../assets/javascript.svg"
 import CSS from "../assets/css.svg"
 import ReactIcon from "../assets/structure.svg"
 import BootstrapIcon from "../assets/bootstrap-fill.svg"
-import PerfumePicker from "../assets/Perfume Picker.png"
+import MFC from "../assets/MyFragranceCollection.png"
 const Projects = () => {
   const projectCards = [
     {
-      image: PerfumePicker,
+      image: MFC,
       alt: "An app that I made for people with a big collection of perfumes.",
-      title: "Fragrance Picker",
+      title: "My Fragrance Collection",
       par: `An app that I made for people with a big collection of perfumes. Let's them Register and Log in using Firebase Auth. Let's them search for a perfume using the Bing Image Search API and add the perfume and an Image of it to their collection which is stored in Firestore.`,
       code: "https://github.com/IKorchev/randomiser",
       hosted: "https://www.myfragrancecollection.co.uk/",
