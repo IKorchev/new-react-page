@@ -23,8 +23,17 @@ const Projects = () => {
       title: "Fragrance Picker",
       par: `An app that I made for people with a big collection of perfumes. Let's them Register and Log in using Firebase Auth. Let's them search for a perfume using the Bing Image Search API and add the perfume and an Image of it to their collection which is stored in Firestore.`,
       code: "https://github.com/IKorchev/randomiser",
-      hosted: "https://perfumecollection.herokuapp.com",
+      hosted: "https://www.myfragrancecollection.co.uk/",
       id: 0,
+    },
+    {
+      image: TravelAgency,
+      alt: "Travel Agency Website",
+      title: "Agency Website",
+      par: `A simple static site built with Bootstrap HTML CSS and Javascript`,
+      code: "https://github.com/IKorchev/travel-agency",
+      hosted: "https://ikorchev.github.io/travel-agency/",
+      id: 3,
     },
     {
       image: NasaApp,
@@ -44,18 +53,9 @@ const Projects = () => {
       hosted: "https://ikorchev.github.io/weather-app/",
       id: 2,
     },
-    {
-      image: TravelAgency,
-      alt: "Travel Agency Website",
-      title: "Agency Website",
-      par: `A simple static site built with Bootstrap HTML CSS and Javascript`,
-      code: "https://github.com/IKorchev/travel-agency",
-      hosted: "https://ikorchev.github.io/travel-agency/",
-      id: 3,
-    },
   ]
 
-  const skill = [
+  const skills = [
     {
       image: HTML,
       title: "HTML",
@@ -95,7 +95,7 @@ const Projects = () => {
 
   return (
     <div className='row gx-0 justify-content-center' id='projects'>
-      <Skill skill={skill} />
+      <Skill skill={skills} />
       <ProjectCards projectCards={projectCards} />
     </div>
   )
