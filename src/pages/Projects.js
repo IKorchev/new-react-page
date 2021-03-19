@@ -14,6 +14,8 @@ import CSS from "../assets/css.svg"
 import ReactIcon from "../assets/structure.svg"
 import BootstrapIcon from "../assets/bootstrap-fill.svg"
 import MFC from "../assets/MyFragranceCollection.png"
+import AppleClone from "../assets/Apple Page Clone.jpg"
+import Chatty from "../assets/Chatty.jpg"
 const Projects = () => {
   const projectCards = [
     {
@@ -23,7 +25,14 @@ const Projects = () => {
       par: `An app that I made for people with a big collection of perfumes. Let's them Register and Log in using Firebase Auth. Let's them search for a perfume using the Bing Image Search API and add the perfume and an Image of it to their collection which is stored in Firestore.`,
       code: "https://github.com/IKorchev/randomiser",
       hosted: "https://www.myfragrancecollection.co.uk/",
-      id: 0,
+    },
+    {
+      image: AppleClone,
+      alt: "Apple Page Clone",
+      title: "Apple Landing Page Clone",
+      par: `Used HTML, CSS, Bootstrap and JavaScript to replicate Apple's landing page.`,
+      code: "https://github.com/IKorchev/apple-landing-page-clone",
+      hosted: "https://ikorchev.github.io/apple-landing-page-clone/src/",
     },
     {
       image: TravelAgency,
@@ -32,7 +41,14 @@ const Projects = () => {
       par: `A simple static site built with Bootstrap HTML CSS and Javascript`,
       code: "https://github.com/IKorchev/travel-agency",
       hosted: "https://ikorchev.github.io/travel-agency/",
-      id: 3,
+    },
+    {
+      image: Chatty,
+      alt: "Chat app done with socketio",
+      title: "Chatty",
+      par: `Chat app I made using SocketIO API. People in the chat can see who is in the room and send messages to them.`,
+      code: "https://github.com/IKorchev/socketio-chat-app",
+      hosted: "https://socketio-chatty.herokuapp.com/",
     },
     {
       image: NasaApp,
@@ -41,7 +57,6 @@ const Projects = () => {
       par: `An app built with HTML CSS and JavaScript. It fetches images from the NASA API and shows the picture for a given date.`,
       code: "https://github.com/IKorchev/apod-nasa-project",
       hosted: "https://ikorchev.github.io/apod-nasa-project/",
-      id: 1,
     },
     {
       image: WeatherApp,
@@ -50,7 +65,6 @@ const Projects = () => {
       par: `Simple weather app, shows the current weather in a given location.`,
       code: "https://github.com/IKorchev/weather-app",
       hosted: "https://ikorchev.github.io/weather-app/",
-      id: 2,
     },
   ]
 
