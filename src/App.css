@@ -24,30 +24,33 @@ body::-webkit-scrollbar-thumb {
   --color-pink: rgb(255, 211, 198);
 }
 
+h1:not(.card-title) {
+  font-family: "Space Mono", monospace;
+}
+
 #textarea {
   height: 100px;
+}
+.navbar-toggler {
+  color: var(--color-blue);
 }
 .navbar {
   justify-content: baseline !important;
   border-bottom: 2px solid var(--color-blue);
   transition: all 0.6s ease-in-out;
 }
-.navbar-scroll {
-  transform: translateY(-68px);
-  opacity: 0.2;
-}
+
 .nav-link {
   color: var(--color-blue);
-  padding-left: 1.5rem !important;
+  padding: 0 1.5rem !important;
   font-size: x-large;
 }
 .nav-link:hover {
   color: var(--color-pink) !important;
 }
-
 .jumbotron {
-  font-family: "Nunito Sans", sans-serif;
-  height: 600px;
+  font-family: "Space Mono", monospace;
+  height: 60vh;
   background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.2)),
     url(./assets/london-skyline.jpg) !important;
   background-size: cover !important;
@@ -61,6 +64,8 @@ body::-webkit-scrollbar-thumb {
 }
 
 .main-div {
+  height: 60vh;
+  min-height: 50vh;
   background: linear-gradient(
     0deg,
     rgb(255, 255, 255) 0%,
@@ -68,8 +73,12 @@ body::-webkit-scrollbar-thumb {
   ) !important;
 }
 
+.map {
+  height: 200px;
+  width: 200px;
+}
 .projectCard {
-  width: 420px !important;
+  width: 600px !important;
   border-radius: 0px !important;
   box-shadow: 0 0 15px 2px var(--color-blue) !important;
   transition: transform 0.1s ease-in-out;
@@ -118,47 +127,19 @@ body::-webkit-scrollbar-thumb {
   cursor: pointer;
 }
 
-#downarrow {
-  cursor: pointer;
-  position: absolute;
-  left: 50%;
-  top: 56%;
+.links {
+  margin-left: auto !important;
 }
-
 /* MEDIA QUERIES */
 
-@media only screen and (max-width: 300px) {
-  .nav-link {
-    padding: 0 !important;
-    margin: 0 10px !important;
-    font-size: 0.8rem !important;
-    transition: all 1s ease;
+@media only screen and (max-width: 991px) {
+  .links {
+    margin: 0 !important;
   }
-  #downarrow {
-    top: 46%;
-  }
-}
-@media only screen and (max-width: 500px) {
-  .nav-link {
-    padding: 0 !important;
-    margin: 0 10px !important;
-    font-size: 1.2rem;
-    transition: all 1s ease;
-  }
-  .map {
-    width: 200px !important;
-    height: 200px;
-  }
-}
-
-@media only screen and (max-width: 880px) {
   .nav-link {
     padding: 10px 0 !important;
     margin: 0 16px;
     transition: all 1s ease;
-  }
-  .jumbotron {
-    height: 400px;
   }
   .jumbotron h1,
   p {
@@ -171,12 +152,4 @@ body::-webkit-scrollbar-thumb {
   .skillsCard {
     margin-top: 2rem !important;
   }
-  #downarrow {
-    position: absolute;
-    left: 47%;
-    top: 38%;
-  }
-}
-
-@media only screen and (max-width: 1200px) {
 }

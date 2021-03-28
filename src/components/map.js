@@ -4,7 +4,6 @@ import { MapContainer, TileLayer, Marker } from "react-leaflet"
 const MapComponent = () => {
   return (
     <MapContainer
-      style={{ height: "250px", width: "300px" }}
       className='map'
       center={[51.587, -0.096]}
       zoom={9.3}

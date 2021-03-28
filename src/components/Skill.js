@@ -3,7 +3,7 @@ import React from "react"
 const Skill = ({ skill }) => {
   return (
     <div className='row justify-content-center'>
-      <h1 className='display-6 text-center'>Skills</h1>
+      <h1 className='text-center'>Skills</h1>
       {skill.map((el) => {
         return (
           <div key={el.title} className='skillsCard mt-5'>

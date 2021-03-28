@@ -6,6 +6,7 @@ import Skill from "../components/Skill"
 import NasaApp from "../assets/nasa-app.png"
 import WeatherApp from "../assets/weather-app.png"
 import TravelAgency from "../assets/TravelAgency.png"
+import NODEJS from "../assets/node-js.svg"
 import HTML from "../assets/html-5.svg"
 import GIT from "../assets/git.svg"
 import GitHub from "../assets/github.svg"
@@ -80,6 +81,11 @@ const Projects = () => {
       alt: "CSS icon",
     },
     {
+      image: BootstrapIcon,
+      title: "Bootstrap",
+      alt: "Bootstrap icon",
+    },
+    {
       image: JavaScript,
       title: "JavaScript",
       alt: "JavaScript icon",
@@ -88,6 +94,11 @@ const Projects = () => {
       image: ReactIcon,
       title: "React",
       alt: "ReactJS icon",
+    },
+    {
+      image: NODEJS,
+      title: "Node.js",
+      alt: "Node.js icon",
     },
     {
       image: GitHub,
@@ -99,15 +110,10 @@ const Projects = () => {
       title: "GIT",
       alt: "Git icon",
     },
-    {
-      image: BootstrapIcon,
-      title: "Bootstrap",
-      alt: "Bootstrap icon",
-    },
   ]
 
   return (
-    <div className='row gx-0 justify-content-center' id='projects'>
+    <div className='container mx-auto row gx-0 justify-content-center' id='projects'>
       <Skill skill={skills} />
       <ProjectCards projectCards={projectCards} />
     </div>

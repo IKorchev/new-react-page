@@ -11,11 +11,11 @@ const Contact = () => {
   const [textInput, setTextInput] = useState("")
 
   return (
-    <div className='container-fluid py-2' id='contact'>
-      <h1 className='display-6 text-center my-5'>Contact</h1>
+    <div className='container py-2 mt-2' id='contact'>
+      <h1 className='text-center my-5'>Contact</h1>
       <div className='row justify-content-center'>
-        <div className='col-sm-auto mt-3'>
-          <form action='/sent' method='post' className=' d-flex flex-column'>
+        <div className='col-md-4'>
+          <form action='/sent' method='post' className='d-flex flex-column'>
             <h1 className='h3 text-center my-3'>Contact Form</h1>
             <div className='form-floating mb-3'>
               <input
@@ -60,9 +60,9 @@ const Contact = () => {
             <input type='submit' className='btn btn-info mt-2' />
           </form>
         </div>
-        <div className='col-xl-3 my-3 text-center d-flex flex-column justify-content-center align-items-center'>
+        <div className='col-md-4 text-center d-flex flex-column justify-content-center align-items-center'>
           <div>
-            <h1 className='h3 text-center'>Socials</h1>
+            <h1 className='h3 text-center my-3'>Socials</h1>
             <a href='https://github.com/IKorchev' target='_blank' rel='noreferrer'>
               <img
                 data-src={GitHubIcon}
@@ -81,12 +81,12 @@ const Contact = () => {
               />
             </a>
           </div>
-          <div className='mt-4 rounded'>
+          <div className='mt-3 rounded'>
             <MapComponent />
           </div>
         </div>
-        <div className='col-xl-3 mt-4 text-center my-3'>
-          <h1 className='h3'>Email me:</h1>
+        <div className='col-md-4 text-center'>
+          <h1 className='h3 my-3'>Email me:</h1>
           <p className='h6'>korchev94@gmail.com</p>
         </div>
       </div>

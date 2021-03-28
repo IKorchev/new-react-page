@@ -3,7 +3,7 @@ import React from "react"
 const ProjectCards = ({ projectCards }) => {
   return (
     <>
-      <h1 className='display-4 text-center my-5'>Projects</h1>
+      <h1 className='text-center my-5'>Projects</h1>
       {projectCards.map((project) => {
         return (
           <div
