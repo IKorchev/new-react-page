@@ -19,7 +19,7 @@ const Navbar = () => {
         <a className='nav-link' href='#home'>
           Home
         </a>
-        <a className='nav-link' href='#about-me'>
+        <a className='nav-link' href='#aboutme'>
           About me
         </a>
         <a className='nav-link' href='#projects'>
