@@ -77,18 +77,11 @@ h1:not(.card-title) {
   height: 200px;
   width: 200px;
 }
-.projectCard {
-  width: 600px !important;
-  border-radius: 0px !important;
-  box-shadow: 0 0 15px 2px var(--color-blue) !important;
-  transition: transform 0.1s ease-in-out;
-}
-.card-img-top {
-  height: 300px;
-  object-fit: contain !important;
-}
-.projectCard:hover {
-  transform: scale(1.01);
+
+.col-xl-4 {
+  cursor: pointer;
+  width: 30% !important;
+  font-size: 0.7rem !important;
 }
 .btn {
   background-color: var(--color-blue) !important;
@@ -131,8 +124,22 @@ h1:not(.card-title) {
   margin-left: auto !important;
 }
 /* MEDIA QUERIES */
+@media only screen and (max-width: 1400px) {
+  .col-xl-4 {
+    width: 50% !important;
+    font-size: 0.9rem !important;
+  }
 
+  #aboutme p {
+    width: 90% !important;
+  }
+}
 @media only screen and (max-width: 991px) {
+  .col-xl-4 {
+    width: 80% !important;
+    font-size: 0.9rem !important;
+  }
+
   .links {
     margin: 0 !important;
   }
@@ -151,5 +158,10 @@ h1:not(.card-title) {
 
   .skillsCard {
     margin-top: 2rem !important;
+  }
+}
+@media only screen and (max-width: 575px) {
+  .card-xl-4 {
+    width: 100%;
   }
 }

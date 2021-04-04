@@ -13,7 +13,7 @@ const Navbar = () => {
         aria-controls='navbar-collapse'
         aria-expanded='false'
         aria-label='Toggle navigation'>
-        <i class='bi bi-list fs-1'></i>
+        <i className='bi bi-list fs-1'></i>
       </button>
       <div className='collapse navbar-collapse navbar-nav' id='navbarCollapse'>
         <a className='nav-link' href='#home'>

@@ -1,130 +1,47 @@
-import React from "react"
-import ProjectCards from "../components/ProjectCards"
+import React, { useEffect, useState } from "react"
 import Skill from "../components/Skill"
-
+import AnimatedCards from "../components/animatedCards"
 // ASSETS
-import NasaApp from "../assets/nasa-app.png"
-import WeatherApp from "../assets/weather-app.png"
-import TravelAgency from "../assets/TravelAgency.png"
-import NODEJS from "../assets/node-js.svg"
-import HTML from "../assets/html-5.svg"
-import GIT from "../assets/git.svg"
-import GitHub from "../assets/github.svg"
+import NodejsIcon from "../assets/node-js.svg"
+import HTMLIcon from "../assets/html-5.svg"
+import GitIcon from "../assets/git.svg"
+import GitHubIcon from "../assets/github.svg"
 import JavaScript from "../assets/javascript.svg"
-import CSS from "../assets/css.svg"
+import CSSIcon from "../assets/css.svg"
 import ReactIcon from "../assets/structure.svg"
-import BootstrapIcon from "../assets/bootstrap-fill.svg"
-import MFC from "../assets/MyFragranceCollection.png"
-import AppleClone from "../assets/Apple Page Clone.jpg"
-import Chatty from "../assets/Chatty.jpg"
-import Warzone from "../assets/Warzone.jpg"
-const Projects = () => {
-  const projectCards = [
-    {
-      image: MFC,
-      alt: "An app that I made for people with a big collection of perfumes.",
-      title: "My Fragrance Collection",
-      par: `An app that I made for people with a big collection of perfumes. Let's them Register and Log in using Firebase Auth. Let's them search for a perfume using the Bing Image Search API and add the perfume and an Image of it to their collection which is stored in Firestore. Technologies used: HTML, CSS, Bootstrap, JavaScript, Node.js, Express.js, Firebase Auth & Firestore, Bing search API and more.`,
-      code: "https://github.com/IKorchev/randomiser",
-      hosted: "https://www.myfragrancecollection.co.uk/",
-    },
-    {
-      image: Warzone,
-      alt: "Warzone stats tracker app",
-      title: "COD: Warzone stats tracker",
-      par: `This app's purpose is to track people's stats in the game Call Of Duty: Warzone. Allows users to search for their account and check what their current stats are. They are then able to come back and check how they did since the last time they updated their stats. Technologies used: HTML, CSS, Bootstrap, JavaScript, Node.js, Express.js, MongoDB, Mongoose, COD-API.`,
-      code: "https://github.com/IKorchev/warzone-weekly-stats",
-      hosted: "https://circular-miniature-octagon.glitch.me/",
-    },
-    {
-      image: AppleClone,
-      alt: "Apple Page Clone",
-      title: "Apple.com Landing Page Clone",
-      par: `Developed the page to show that I can build pages based on a design given. Technologies used: HTML, CSS, Bootstrap and JavaScript.`,
-      code: "https://github.com/IKorchev/apple-landing-page-clone",
-      hosted: "https://ikorchev.github.io/apple-landing-page-clone/src/",
-    },
-    {
-      image: Chatty,
-      alt: "Chat app done with socketio",
-      title: "Chatty",
-      par: `Chat app I made using SocketIO API. People in the chat can see who is in the room and send messages to them.`,
-      code: "https://github.com/IKorchev/socketio-chat-app",
-      hosted: "https://socketio-chatty.herokuapp.com/",
-    },
-    {
-      image: NasaApp,
-      alt: "Nasa App",
-      title: "Nasa Project",
-      par: `An app built with HTML CSS and JavaScript. It fetches images from the NASA API and shows the picture for a given date.`,
-      code: "https://github.com/IKorchev/apod-nasa-project",
-      hosted: "https://ikorchev.github.io/apod-nasa-project/",
-    },
-    {
-      image: WeatherApp,
-      alt: "Weather App",
-      title: "Weather App",
-      par: `Simple weather app, shows the current weather in a given location.`,
-      code: "https://github.com/IKorchev/weather-app",
-      hosted: "https://ikorchev.github.io/weather-app/",
-    },
-    {
-      image: TravelAgency,
-      alt: "Travel Agency Website",
-      title: "Agency Website",
-      par: `A simple static site built with Bootstrap HTML CSS and Javascript`,
-      code: "https://github.com/IKorchev/travel-agency",
-      hosted: "https://ikorchev.github.io/travel-agency/",
-    },
-  ]
+import BStrapIcon from "../assets/bootstrap-fill.svg"
 
+const Projects = () => {
+  const [data, setData] = useState([])
+
+  useEffect(() => {
+    ;(async () => {
+      const data = await fetch("/content", { method: "POST" })
+      const json = await data.json()
+      return setData(json)
+    })()
+  }, [])
+
+  //prettier-ignore
   const skills = [
-    {
-      image: HTML,
-      title: "HTML",
-      alt: "HTML icon",
-    },
-    {
-      image: CSS,
-      title: "CSS",
-      alt: "CSS icon",
-    },
-    {
-      image: BootstrapIcon,
-      title: "Bootstrap",
-      alt: "Bootstrap icon",
-    },
-    {
-      image: JavaScript,
-      title: "JavaScript",
-      alt: "JavaScript icon",
-    },
-    {
-      image: ReactIcon,
-      title: "React",
-      alt: "ReactJS icon",
-    },
-    {
-      image: NODEJS,
-      title: "Node.js",
-      alt: "Node.js icon",
-    },
-    {
-      image: GitHub,
-      title: "GitHub",
-      alt: "Github icon",
-    },
-    {
-      image: GIT,
-      title: "GIT",
-      alt: "Git icon",
-    },
-  ]
+    { image: HTMLIcon,   title: "HTML",       alt: "HTML icon" },
+    { image: CSSIcon,    title: "CSS",        alt: "CSS icon" },
+    { image: BStrapIcon, title: "Bootstrap",  alt: "Bootstrap icon" },
+    { image: JavaScript, title: "JavaScript", alt: "JavaScript icon" },
+    { image: ReactIcon,  title: "React",      alt: "ReactJS icon" },
+    { image: NodejsIcon, title: "Node.js",    alt: "Node.js icon" },
+    { image: GitHubIcon, title: "GitHub",     alt: "Github icon" },
+    { image: GitIcon,    title: "GIT",        alt: "Git icon" },]
 
   return (
-    <div className='container mx-auto row gx-0 justify-content-center pt-5' id='projects'>
+    <div className='container' id='projects'>
       <Skill skill={skills} />
-      <ProjectCards projectCards={projectCards} />
+      <div className='row justify-content-center'>
+        <h1 className='text-center my-5'>Projects</h1>
+        {data.map((project) => (
+          <AnimatedCards project={project} />
+        ))}
+      </div>
     </div>
   )
 }
