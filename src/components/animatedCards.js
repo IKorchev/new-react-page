@@ -1,6 +1,5 @@
 import React, { useState } from "react"
-import { useSpring, animated as a, config } from "react-spring"
-import Image from "../assets/Hai.jpg"
+import { useSpring, animated as a } from "react-spring"
 const AnimatedCards = ({ project }) => {
   const [toggle, set] = useState(false)
   const props = useSpring({
