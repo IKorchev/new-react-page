@@ -18,7 +18,8 @@ const Projects = () => {
     ;(async () => {
       const data = await fetch("/content", { method: "POST" })
       const json = await data.json()
-      return setData(json)
+      console.log(json)
+      setData(json)
     })()
   }, [])
 
