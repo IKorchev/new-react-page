@@ -1,5 +1,6 @@
 import React, { useState } from "react"
 import { useSpring, animated as a } from "react-spring"
+
 const AnimatedCards = ({ project }) => {
   const [toggle, set] = useState(false)
   const props = useSpring({
