@@ -1,48 +1,63 @@
-import React, { useEffect, useState } from "react"
+import React, { createRef, useEffect, useRef, useState } from "react"
 import Skill from "../components/Skill"
 import AnimatedCards from "../components/animatedCards"
-// ASSETS
-import NodejsIcon from "../assets/node-js.svg"
-import HTMLIcon from "../assets/html-5.svg"
-import GitIcon from "../assets/git.svg"
-import GitHubIcon from "../assets/github.svg"
-import JavaScript from "../assets/javascript.svg"
-import CSSIcon from "../assets/css.svg"
-import ReactIcon from "../assets/structure.svg"
-import BStrapIcon from "../assets/bootstrap-fill.svg"
+import Slider from "react-slick"
+
+import gsap from "gsap"
+import { ScrollTrigger } from "gsap/all"
+
+function getWindowDimensions() {
+  const { innerWidth: width } = window
+  return width
+}
 
 const Projects = () => {
+  const ref = useRef(null)
   const [data, setData] = useState([])
+  const [windowDimensions, setWindowDimensions] = useState(getWindowDimensions())
 
-  useEffect(() => {
-    ;(async () => {
-      const data = await fetch("/content", { method: "POST" })
-      const json = await data.json()
-      console.log(json)
+  gsap.registerPlugin(ScrollTrigger)
+
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  useEffect(async () => {
+    try {
+      const response = await fetch("/content", {
+        headers: {
+          "Content-Type": "application/json",
+          Accept: "application/json",
+        },
+      })
+      const json = await response.json()
       setData(json)
-    })()
+    } catch (err) {
+      console.log(err)
+    }
+
+    function handleResize() {
+      console.log(getWindowDimensions())
+      setWindowDimensions(getWindowDimensions())
+    }
+
+    window.addEventListener("resize", handleResize)
+    return () => window.removeEventListener("resize", handleResize)
   }, [])
-
-  //prettier-ignore
-  const skills = [
-    { image: HTMLIcon,   title: "HTML",       alt: "HTML icon" },
-    { image: CSSIcon,    title: "CSS",        alt: "CSS icon" },
-    { image: BStrapIcon, title: "Bootstrap",  alt: "Bootstrap icon" },
-    { image: JavaScript, title: "JavaScript", alt: "JavaScript icon" },
-    { image: ReactIcon,  title: "React",      alt: "ReactJS icon" },
-    { image: NodejsIcon, title: "Node.js",    alt: "Node.js icon" },
-    { image: GitHubIcon, title: "GitHub",     alt: "Github icon" },
-    { image: GitIcon,    title: "GIT",        alt: "Git icon" },]
-
+  const settings = {
+    autoplay: true,
+    dots: true,
+    infinite: true,
+    slidesToShow: windowDimensions > 1300 ? 3 : windowDimensions > 992 ? 2 : 1,
+    speed: 2000,
+    slidesToScroll: 3,
+  }
   return (
     <div className='container' id='projects'>
-      <Skill skill={skills} />
-      <div className='row justify-content-center'>
-        <h1 className='text-center my-5'>Projects</h1>
-        {data.map((project) => (
-          <AnimatedCards project={project} />
+      <Skill />
+      <h1 className='my-5 py-3 text-white border-bottom'>Projects</h1>
+      <Slider className='container' {...settings}>
+        {data.map((project, i) => (
+          <AnimatedCards key={i} project={project} />
         ))}
-      </div>
+      </Slider>
     </div>
   )
 }

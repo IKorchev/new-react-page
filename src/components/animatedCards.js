@@ -1,53 +1,56 @@
-import React, { useState } from "react"
-import { useSpring, animated as a } from "react-spring"
-
+import React, { useRef } from "react"
+import gsap from "gsap"
 const AnimatedCards = ({ project }) => {
-  const [toggle, set] = useState(false)
-  const props = useSpring({
-    opacity: toggle ? 1 : 0,
-    transform: toggle ? "scale(1)" : "scale(0.5)",
-    config: {
-      mass: 1,
-      tension: 555,
-      friction: 22,
-    },
-  })
+  const ref = useRef(null)
+
+  const startAnimation = () => {
+    gsap.to(ref.current, {
+      opacity: 1,
+      duration: 0.2,
+    })
+  }
+  const reverseAnimation = () => {
+    gsap.to(ref.current, {
+      opacity: 0,
+      duration: 0.2,
+    })
+  }
+
   return (
-    <a.div
-      className='col-xl-4'
-      onMouseEnter={() => set(true)}
-      onMouseLeave={() => set(false)}>
+    //prettier-ignore
+    <div  className='col-xl-6 w-100'>
       <div className='card m-2'>
-        <a.img
-          className='card-img lazyload'
-          data-src={project.projectImage.fields.file.url}
+     <img
+          className='card-img'
+          src={project.projectImage.fields.file.url}
           alt='Project screenshot'
         />
-        <a.div
-          style={props}
-          className='card-img-overlay border border-dark d-flex bg-dark text-white text-center flex-column shadow justify-content-center align-items-center'>
-          <h5 className='card-title'>{project.title}</h5>
-          <p className='card-text'>{project.projectDescription}</p>
-          <div>
+        <div
+          //prettier-ignore
+          ref={ref}
+          onMouseEnter={startAnimation}
+          onMouseLeave={reverseAnimation}
+          className="card-img-overlay d-flex flex-column justify-content-between text-white">
+          <h3 className='card-title '>{project.title}</h3>
+          <div className="p-0">
             <a
               href={project.demoLink}
               target='_blank'
               rel='noreferrer'
-              className='btn btn-sm btn-info mx-2'>
-              View demo
+              className='btn btn-info'>
+              <i class="bi bi-play-circle-fill"></i> Demo
             </a>
             <a
               href={project.githubLink}
               target='_blank'
               rel='noreferrer'
-              className='btn btn-sm btn-info mx-2'>
-              Code <i className='fas fa-code fa-sm'></i>
+              className='btn  btn-info ms-2'>
+               <i className='fas fa-code fa-sm'></i> Code
             </a>
           </div>
-        </a.div>
+        </div> 
       </div>
-    </a.div>
+     </div>
   )
 }
-
 export default AnimatedCards

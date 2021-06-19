@@ -4,7 +4,7 @@ import { MapContainer, TileLayer, Marker } from "react-leaflet"
 const MapComponent = () => {
   return (
     <MapContainer
-      className='map'
+      className='map mx-auto'
       center={[51.587, -0.096]}
       zoom={9.3}
       scrollWheelZoom={false}>

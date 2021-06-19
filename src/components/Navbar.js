@@ -1,10 +1,11 @@
 import React from "react"
+import { Link } from "react-scroll"
 import Resume from "../assets/Ivaylo_Korchev_CV.docx"
 const Navbar = () => {
   return (
     <nav
       id='nav'
-      className='navbar bg-dark navbar-expand-lg fixed-top d-flex justify-content-between'>
+      className='navbar bg-dark text-white navbar-expand-lg fixed-top d-flex justify-content-between'>
       <button
         className='navbar-toggler'
         type='button'
@@ -15,19 +16,19 @@ const Navbar = () => {
         aria-label='Toggle navigation'>
         <i className='bi bi-list fs-1'></i>
       </button>
-      <div className='collapse navbar-collapse navbar-nav' id='navbarCollapse'>
-        <a className='nav-link' href='#home'>
+      <div className='collapse navbar-collapse navbar-nav ' id='navbarCollapse'>
+        <Link className='nav-link' to='home'>
           Home
-        </a>
-        <a className='nav-link' href='#aboutme'>
+        </Link>
+        <Link className='nav-link' to='aboutme'>
           About me
-        </a>
-        <a className='nav-link' href='#projects'>
+        </Link>
+        <Link className='nav-link' to='projects'>
           Projects
-        </a>
-        <a className='nav-link' href='#contact'>
+        </Link>
+        <Link className='nav-link' to='contact'>
           Contact
-        </a>
+        </Link>
         <div className='links d-flex'>
           <a
             className='nav-link'
