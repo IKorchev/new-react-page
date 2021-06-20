@@ -7,6 +7,9 @@ body {
   -moz-osx-font-smoothing: grayscale;
   color: white !important;
 }
+#root {
+  overflow-x: hidden;
+}
 
 body::-webkit-scrollbar {
   width: 10px;
@@ -26,7 +29,7 @@ body::-webkit-scrollbar-thumb {
 }
 
 h1:not(.card-title) {
-  font-family: "Space Mono", monospace;
+  font-family: "Poppins", sans-serif;
 }
 
 #textarea {
@@ -36,21 +39,21 @@ h1:not(.card-title) {
   color: var(--color-lightblue) !important;
 }
 .navbar {
-  padding: 0 100px;
-  justify-content: baseline !important;
+  padding: 30px 150px !important;
+  justify-content: space-between !important;
   border-bottom: 2px solid var(--color-lightblue);
-  transition: all 0.6s ease-in-out;
 }
 
 .nav-link {
   cursor: pointer;
+  font-weight: 500;
   color: var(--color-lightblue) !important;
   padding: 0 1.5rem !important;
   font-size: x-large;
 }
 .nav-link:hover,
 .nav-link:focus {
-  color: var(--color-pink) !important;
+  color: rgb(255, 255, 255) !important;
 }
 
 .map {
@@ -59,7 +62,9 @@ h1:not(.card-title) {
 }
 
 .btn {
-  background-color: var(--color-lightblue) !important;
+  font-family: "Poppins" sans-serif;
+  color: rgb(21, 20, 20) !important;
+  background: var(--color-lightblue) !important;
 }
 .btn:hover {
   background-color: white !important;
@@ -73,7 +78,7 @@ h1:not(.card-title) {
   border-bottom: 1px solid black;
   display: grid;
   place-items: center;
-  grid-template-columns: repeat(8, 1fr);
+  grid-template-columns: repeat(9, 1fr);
 }
 .skills-card {
   text-align: center;
@@ -92,23 +97,33 @@ h1:not(.card-title) {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
 }
+.landing-page {
+  height: 100vh;
+  display: grid;
+  grid-template-columns: repeat(2, 0.8fr);
+  justify-content: center;
+}
+
 .left {
-  height: 100vh !important;
-  width: 45vw !important;
+  padding: 250px 150px;
+  background: rgb(157, 157, 157);
 }
 .right {
-  height: 100vh !important;
-  width: 45vw !important;
+  width: 100%;
+}
+.right-wrapper {
+  border-bottom: 1px solid rgb(247, 247, 247);
+  width: 100%;
+  padding-top: 200px !important;
 }
 .card-img-overlay {
+  display: grid;
+  place-items: center;
   z-index: 0;
   overflow: auto;
   cursor: pointer;
   opacity: 0;
   background: rgba(0, 0, 0, 0.95);
-}
-.btn {
-  z-index: -1000 !important;
 }
 .card-text {
   font-size: 1.1rem;
@@ -139,7 +154,7 @@ h1:not(.card-title) {
 }
 input,
 textarea {
-  background: rgb(34, 34, 34) !important;
+  background: rgb(223, 242, 248) !important;
 }
 /* MEDIA QUERIES */
 @media only screen and (max-width: 1400px) {
@@ -147,20 +162,48 @@ textarea {
     grid-template-columns: repeat(2, 1fr);
   }
   .skills-container {
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(3, 1fr);
   }
   #aboutme p {
     width: 90% !important;
   }
+  .landing-page {
+    grid-template-columns: repeat(1, 1fr);
+    place-items: center;
+  }
+  .left,
+  .right {
+    width: 100%;
+    z-index: 0;
+  }
+  .right-wrapper {
+    position: absolute;
+    opacity: 0.5;
+  }
+  .landing-page > h1,
+  h2 {
+    font-weight: bold !important;
+  }
+  .left {
+    z-index: 10;
+    padding: 250px 0;
+    color: white;
+    background-color: rgba(21, 20, 20, 0);
+  }
 }
 
 @media only screen and (max-width: 992px) {
+  #projects {
+    width: 80%;
+  }
   .links {
     margin: 0 !important;
   }
   .nav-link {
-    padding: 10px 0 !important;
-    margin: 0 16px;
+    text-align: center;
+    width: 100%;
+    padding: 40px !important;
+    margin: 0;
     transition: all 1s ease;
   }
 
@@ -179,5 +222,10 @@ textarea {
   }
   .card-text {
     font-size: 0.9rem;
+  }
+}
+@media (max-width: 575px) {
+  .skills-container {
+    grid-template-columns: repeat(2, 1fr) !important;
   }
 }

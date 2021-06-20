@@ -5,18 +5,21 @@ const Navbar = () => {
   return (
     <nav
       id='nav'
-      className='navbar bg-dark text-white navbar-expand-lg fixed-top d-flex justify-content-between'>
+      className='navbar py-2 px-5 bg-dark text-white navbar-expand-lg fixed-top'>
       <button
-        className='navbar-toggler'
+        className='navbar-toggler ms-auto'
         type='button'
         data-bs-toggle='collapse'
-        data-bs-target='#navbarCollapse'
+        data-bs-target='#navbar-collapse'
         aria-controls='navbar-collapse'
         aria-expanded='false'
         aria-label='Toggle navigation'>
         <i className='bi bi-list fs-1'></i>
       </button>
-      <div className='collapse navbar-collapse navbar-nav ' id='navbarCollapse'>
+      <div
+        className='collapse navbar-collapse navbar-nav flex-row justify-content-end'
+        id='navbar-collapse'>
+        {/* TODO: ADD LOGO */}
         <Link className='nav-link' to='home'>
           Home
         </Link>
@@ -29,33 +32,6 @@ const Navbar = () => {
         <Link className='nav-link' to='contact'>
           Contact
         </Link>
-        <div className='links d-flex'>
-          <a
-            className='nav-link'
-            href='https://github.com/ikorchev/'
-            target='_blank'
-            aria-label='Link to my Github'
-            rel='noreferrer'>
-            <i className='fab fa-github fa-lg' alt='Link to my Github'></i>
-          </a>
-          <a
-            className='nav-link'
-            aria-label='Link to my Github'
-            href='https://www.linkedin.com/in/ivaylo-korchev'
-            target='_blank'
-            rel='noreferrer'>
-            <i className='fab fa-linkedin fa-lg' alt='Link to my Linkedin'></i>
-          </a>
-          <a
-            className='nav-link'
-            aria-label='Link to download my resume'
-            href={Resume}
-            target='_blank'
-            rel='noreferrer'
-            download>
-            <i className='fas fa-file-download'></i>
-          </a>
-        </div>
       </div>
     </nav>
   )

@@ -12,10 +12,14 @@ const Contact = () => {
 
   return (
     <div className='container mx-auto py-5 mt-2' id='contact'>
-      <h1 className='my-5 py-3 border-bottom'>Contact</h1>
+      <h1 className='section-title my-5 py-3 border-bottom'>Contact</h1>
       <div className='row justify-content-center'>
-        <form action='/sent' method='post' className='d-flex flex-column col-md-4'>
-          <h1 className='h3 text-center my-3'>Contact Form</h1>
+        <form
+          action='/sent'
+          method='post'
+          className='d-flex flex-column col-md-4 text-dark '>
+          <h2 className='h3 text-center my-3 text-white'>Contact Form</h2>
+
           <div className='form-floating mb-3'>
             <input
               className='form-control'
@@ -56,27 +60,21 @@ const Contact = () => {
             />
             <label htmlFor='textarea'>Message</label>
           </div>
-          <input type='submit' className='btn btn-info mt-2' />
+          <button type='submit' value='SUBMIT' className='btn mt-2'>
+            SUBMIT
+          </button>
         </form>
         <div className='col-md-4 text-center d-flex flex-column  align-items-center'>
           <div>
-            <h1 className='h3 text-center my-3'>Socials</h1>
+            <h2 className='h3 text-center my-3'>Socials</h2>
             <a href='https://github.com/IKorchev' target='_blank' rel='noreferrer'>
-              <img
-                data-src={GitHubIcon}
-                className='icons m-2 lazyload'
-                alt='GitHub Icon'
-              />
+              <img src={GitHubIcon} className='icons m-2' alt='GitHub Icon' />
             </a>
             <a
               href='https://www.linkedin.com/in/ivaylo-korchev-b87bba19b/'
               target='_blank'
               rel='noreferrer'>
-              <img
-                data-src={LinkedinIcon}
-                className='icons m-2 lazyload'
-                alt='LinkedIn Icon'
-              />
+              <img src={LinkedinIcon} className='icons m-2' alt='LinkedIn Icon' />
             </a>
           </div>
           <div className='mt-3 rounded'>
@@ -84,7 +82,7 @@ const Contact = () => {
           </div>
         </div>
         <div className='col-md-4 text-center'>
-          <h1 className='h3 my-3'>Email me:</h1>
+          <h2 className='h3 my-3'>Email me:</h2>
           <p className='h6'>korchev94@gmail.com</p>
         </div>
       </div>

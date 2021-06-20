@@ -6,13 +6,14 @@ import Slider from "react-slick"
 import gsap from "gsap"
 import { ScrollTrigger } from "gsap/all"
 
-function getWindowDimensions() {
+const getWindowDimensions = () => {
   const { innerWidth: width } = window
   return width
 }
 
 const Projects = () => {
-  const ref = useRef(null)
+  //State
+
   const [data, setData] = useState([])
   const [windowDimensions, setWindowDimensions] = useState(getWindowDimensions())
 
@@ -20,6 +21,7 @@ const Projects = () => {
 
   // eslint-disable-next-line react-hooks/exhaustive-deps
   useEffect(async () => {
+    //Fetch data from server
     try {
       const response = await fetch("/content", {
         headers: {
@@ -33,26 +35,30 @@ const Projects = () => {
       console.log(err)
     }
 
-    function handleResize() {
-      console.log(getWindowDimensions())
+    // Handle resize for carousel
+    const handleResize = () => {
       setWindowDimensions(getWindowDimensions())
     }
 
     window.addEventListener("resize", handleResize)
     return () => window.removeEventListener("resize", handleResize)
   }, [])
+
+  //Determine window size (for carousel)
+  //prettier-ignore
+  const numberBasedOnWidth = () => windowDimensions > 1300 ? 3 : windowDimensions > 992 ? 2 : 1;
   const settings = {
     autoplay: true,
     dots: true,
     infinite: true,
-    slidesToShow: windowDimensions > 1300 ? 3 : windowDimensions > 992 ? 2 : 1,
+    slidesToShow: numberBasedOnWidth(),
     speed: 2000,
-    slidesToScroll: 3,
+    slidesToScroll: 1,
   }
   return (
     <div className='container' id='projects'>
       <Skill />
-      <h1 className='my-5 py-3 text-white border-bottom'>Projects</h1>
+      <h1 className='section-title my-5 py-3 text-white border-bottom'>Projects</h1>
       <Slider className='container' {...settings}>
         {data.map((project, i) => (
           <AnimatedCards key={i} project={project} />
