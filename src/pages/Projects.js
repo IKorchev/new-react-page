@@ -52,7 +52,7 @@ const Projects = () => {
     dots: true,
     infinite: true,
     slidesToShow: numberBasedOnWidth(),
-    speed: 2000,
+    speed: 600,
     slidesToScroll: 1,
   }
   return (

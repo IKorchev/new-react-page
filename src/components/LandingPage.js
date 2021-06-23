@@ -10,19 +10,11 @@ const LandingPage = () => {
     const tl = gsap.timeline({ repeat: -1 })
     const shapesTL = gsap.timeline({ repeat: -1 })
 
-    tl.from("#Person", {
-      y: -100,
+    tl.to("#Person", { y: "-=10", duration: 2, ease: Power1.easeInOut }).to("#Person", {
+      y: "+=10",
       duration: 2,
-      ease: "circ",
-      repeat: 0,
+      ease: Power1.easeInOut,
     })
-      .to("#Person", { y: "-=10", duration: 2, ease: Power1.easeInOut, yoyo: true })
-      .to("#Person", {
-        y: "+=10",
-        duration: 2,
-        ease: Power1.easeInOut,
-        yoyo: true,
-      })
 
     shapesTL.to(".Rectangle", {
       y: "-=15",

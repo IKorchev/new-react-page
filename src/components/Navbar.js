@@ -1,11 +1,10 @@
 import React from "react"
 import { Link } from "react-scroll"
-import Resume from "../assets/Ivaylo_Korchev_CV.docx"
 const Navbar = () => {
   return (
     <nav
       id='nav'
-      className='navbar py-2 px-5 bg-dark text-white navbar-expand-lg fixed-top'>
+      className='navbar text-white navbar-expand-lg fixed-top'>
       <button
         className='navbar-toggler ms-auto'
         type='button'
@@ -16,9 +15,7 @@ const Navbar = () => {
         aria-label='Toggle navigation'>
         <i className='bi bi-list fs-1'></i>
       </button>
-      <div
-        className='collapse navbar-collapse navbar-nav flex-row justify-content-end'
-        id='navbar-collapse'>
+      <div className='collapse navbar-collapse navbar-nav' id='navbar-collapse'>
         {/* TODO: ADD LOGO */}
         <Link className='nav-link' to='home'>
           Home

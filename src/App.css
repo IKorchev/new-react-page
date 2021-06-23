@@ -1,4 +1,6 @@
 body {
+  font-family: "Poppins" sans-serif !important;
+
   scroll-behavior: smooth;
   box-sizing: border-box;
   margin: 0;
@@ -31,29 +33,31 @@ body::-webkit-scrollbar-thumb {
 h1:not(.card-title) {
   font-family: "Poppins", sans-serif;
 }
-
+#aboutme {
+  margin-top: 100px;
+}
 #textarea {
   height: 100px;
 }
 .navbar-toggler {
   color: var(--color-lightblue) !important;
 }
+
 .navbar {
-  padding: 30px 150px !important;
-  justify-content: space-between !important;
-  border-bottom: 2px solid var(--color-lightblue);
+  background-color: rgba(0, 0, 0, 0.803);
+  padding: 10px 180px;
 }
 
 .nav-link {
+  margin: 0 20px;
+  padding: 15px;
   cursor: pointer;
-  font-weight: 500;
-  color: var(--color-lightblue) !important;
-  padding: 0 1.5rem !important;
-  font-size: x-large;
+  color: white;
+  font-size: 1.3rem;
 }
 .nav-link:hover,
 .nav-link:focus {
-  color: rgb(255, 255, 255) !important;
+  color: rgba(255, 255, 255, 0.316) !important;
 }
 
 .map {
@@ -105,11 +109,16 @@ h1:not(.card-title) {
 }
 
 .left {
-  padding: 250px 150px;
-  background: rgb(157, 157, 157);
+  padding-top: 300px;
+  padding-left: 250px;
+  background: rgb(242, 242, 242);
+  color: black !important;
 }
 .right {
   width: 100%;
+}
+.left h1 {
+  font-weight: bolder !important;
 }
 .right-wrapper {
   border-bottom: 1px solid rgb(247, 247, 247);
@@ -157,6 +166,11 @@ textarea {
   background: rgb(223, 242, 248) !important;
 }
 /* MEDIA QUERIES */
+@media only screen and (max-width: 1666px) {
+  .left {
+    padding-left: 100px !important;
+  }
+}
 @media only screen and (max-width: 1400px) {
   .col-xl-6 {
     grid-template-columns: repeat(2, 1fr);
@@ -171,6 +185,10 @@ textarea {
     grid-template-columns: repeat(1, 1fr);
     place-items: center;
   }
+  .left {
+    padding-left: 0 !important;
+    text-align: center;
+  }
   .left,
   .right {
     width: 100%;
@@ -178,17 +196,21 @@ textarea {
   }
   .right-wrapper {
     position: absolute;
-    opacity: 0.5;
+    opacity: 0.7;
+    padding-top: 100px !important;
+    border-bottom: 0;
+    background-color: white !important;
+    z-index: 1;
   }
-  .landing-page > h1,
+  .left h1,
   h2 {
-    font-weight: bold !important;
+    font-weight: bolder !important;
   }
   .left {
     z-index: 10;
     padding: 250px 0;
     color: white;
-    background-color: rgba(21, 20, 20, 0);
+    background-color: rgba(0, 0, 0, 0);
   }
 }
 
@@ -199,10 +221,12 @@ textarea {
   .links {
     margin: 0 !important;
   }
+  .navbar {
+    padding: 10px 20px;
+  }
   .nav-link {
     text-align: center;
     width: 100%;
-    padding: 40px !important;
     margin: 0;
     transition: all 1s ease;
   }
