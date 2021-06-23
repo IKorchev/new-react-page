@@ -6,8 +6,9 @@ import gsap from "gsap"
 import Navbar from "./components/Navbar"
 import Projects from "../src/pages/Projects"
 import Contact from "../src/pages/Contact"
-import Footer from "../src/components/Footer"
-import LandingPage from "../src/components/LandingPage"
+import Footer from "../src/pages/Footer"
+import LandingPage from "./pages/LandingPage"
+import Aboutme from "../src/pages/Aboutme"
 import "lazysizes"
 
 function App() {
@@ -15,6 +16,7 @@ function App() {
     <div className='bg-dark'>
       <Navbar />
       <LandingPage />
+      <Aboutme />
       <Projects />
       <Contact />
       <Footer />

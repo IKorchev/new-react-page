@@ -1,5 +1,5 @@
 import React from "react"
-import Backtotop from "./backtotop"
+import Backtotop from "../components/backtotop"
 
 const Footer = () => {
   return (

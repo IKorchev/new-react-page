@@ -37,14 +37,14 @@ const AnimatedCards = ({ project }) => {
               href={project.demoLink}
               target='_blank'
               rel='noreferrer'
-              className='btn btn-info'>
+              className='btn project-button'>
               <i className="bi bi-play-circle-fill"></i> Demo
             </a>
             <a
               href={project.githubLink}
               target='_blank'
               rel='noreferrer'
-              className='btn  btn-info ms-2'>
+              className='btn project-button ms-2'>
                <i class="bi bi-github"></i> Code
             </a>
           </div>

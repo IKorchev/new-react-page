@@ -10,7 +10,7 @@ import ReactIcon from "../assets/structure.svg"
 import BStrapIcon from "../assets/bootstrap-fill.svg"
 import ExpressJsIcon from "../assets/expressjs-icon.svg"
 import gsap from "gsap/gsap-core"
-
+import { Power1 } from "gsap/all"
 const skills = [
   { image: HTMLIcon, title: "HTML", alt: "HTML icon" },
   { image: CSSIcon, title: "CSS", alt: "CSS icon" },
@@ -45,18 +45,18 @@ const Skill = () => {
     gsap.from([xd], {
       x: 150,
       opacity: 0,
-      stagger: 0.1,
-      duration: 0.6,
-      ease: "circ",
+      stagger: 0.05,
+      duration: 0.3,
+      ease: Power1.easeOut,
       scrollTrigger: {
         trigger: xd,
-        start: "top 100%",
+        start: "top 96%",
       },
     })
   }, [ref])
   return (
-    <div className='row justify-content-center text-white  mt-5'>
-      <h1 className='mt-5 py-3 text-white border-bottom'>Skills</h1>
+    <div className='row justify-content-center'>
+      <h1 className='section-title h1 mt-3 text-white px-0 border-bottom'>Skills</h1>
       <div ref={ref} className='skills-container'>
         {skills.map((el, i) => {
           return (

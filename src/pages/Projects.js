@@ -1,4 +1,4 @@
-import React, { createRef, useEffect, useRef, useState } from "react"
+import React, { useEffect, useRef, useState } from "react"
 import Skill from "../components/Skill"
 import AnimatedCards from "../components/animatedCards"
 import Slider from "react-slick"
@@ -10,14 +10,14 @@ const getWindowDimensions = () => {
   const { innerWidth: width } = window
   return width
 }
+gsap.registerPlugin(ScrollTrigger)
 
 const Projects = () => {
+  const sliderRef = useRef(null)
   //State
 
   const [data, setData] = useState([])
   const [windowDimensions, setWindowDimensions] = useState(getWindowDimensions())
-
-  gsap.registerPlugin(ScrollTrigger)
 
   // eslint-disable-next-line react-hooks/exhaustive-deps
   useEffect(async () => {
@@ -34,6 +34,17 @@ const Projects = () => {
     } catch (err) {
       console.log(err)
     }
+    //animation
+    console.log(sliderRef.current)
+    gsap.from(sliderRef.current, {
+      y: 300,
+      opacity: 0,
+      duration: 1,
+      scrollTrigger: {
+        trigger: sliderRef.current,
+        start: "top 110%",
+      },
+    })
 
     // Handle resize for carousel
     const handleResize = () => {
@@ -52,18 +63,22 @@ const Projects = () => {
     dots: true,
     infinite: true,
     slidesToShow: numberBasedOnWidth(),
-    speed: 600,
+    speed: 1000,
     slidesToScroll: 1,
   }
   return (
     <div className='container' id='projects'>
       <Skill />
-      <h1 className='section-title my-5 py-3 text-white border-bottom'>Projects</h1>
-      <Slider className='container' {...settings}>
-        {data.map((project, i) => (
-          <AnimatedCards key={i} project={project} />
-        ))}
-      </Slider>
+      <h1 className='section-title px-0 h1 my-5 py-3 text-white border-bottom'>
+        Projects
+      </h1>
+      <div ref={sliderRef}>
+        <Slider className='container' {...settings}>
+          {data.map((project, i) => (
+            <AnimatedCards key={i} project={project} />
+          ))}
+        </Slider>
+      </div>
     </div>
   )
 }
