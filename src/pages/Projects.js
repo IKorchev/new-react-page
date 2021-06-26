@@ -1,16 +1,12 @@
 import React, { useEffect, useRef, useState } from "react"
-import Skill from "../components/Skill"
-import AnimatedCards from "../components/animatedCards"
+import AnimatedCards from "../components/AnimatedCards"
+import { sliderAnimation } from "../components/Animations"
 import Slider from "react-slick"
-
-import gsap from "gsap"
-import { ScrollTrigger } from "gsap/all"
 
 const getWindowDimensions = () => {
   const { innerWidth: width } = window
   return width
 }
-gsap.registerPlugin(ScrollTrigger)
 
 const Projects = () => {
   const sliderRef = useRef(null)
@@ -35,16 +31,7 @@ const Projects = () => {
       console.log(err)
     }
     //animation
-    console.log(sliderRef.current)
-    gsap.from(sliderRef.current, {
-      y: 300,
-      opacity: 0,
-      duration: 1,
-      scrollTrigger: {
-        trigger: sliderRef.current,
-        start: "top 110%",
-      },
-    })
+    sliderAnimation(sliderRef.current)
 
     // Handle resize for carousel
     const handleResize = () => {
@@ -68,7 +55,6 @@ const Projects = () => {
   }
   return (
     <div className='container' id='projects'>
-      <Skill />
       <h1 className='section-title px-0 h1 my-5 py-3 text-white border-bottom'>
         Projects
       </h1>

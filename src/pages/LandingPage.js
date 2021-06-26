@@ -1,62 +1,22 @@
-import React, { useEffect, useRef } from "react"
-import gsap from "gsap"
-import { Power1, Power4 } from "gsap"
+import { useEffect, useRef } from "react"
+import { headerAnimation, floatAnimation } from "../components/Animations"
 import BGImage from "../components/BGImage"
-import Aboutme from "./Aboutme"
+import { Link } from "react-scroll"
+
 const LandingPage = () => {
   const contentRef = useRef(null)
-  const floatAnimation = () => {
-    const tl = gsap.timeline({ repeat: -1 })
-    const shapesTL = gsap.timeline({ repeat: -1 })
 
-    tl.to("#Person", { y: "-=10", duration: 2, ease: Power1.easeInOut }).to("#Person", {
-      y: "+=10",
-      duration: 2,
-      ease: Power1.easeInOut,
-    })
-
-    shapesTL.to(".Rectangle", {
-      y: "-=15",
-      duration: 2,
-    })
-    shapesTL.to(".Rectangle", {
-      y: "+=15",
-      duration: 2,
-    })
-    shapesTL.to(".Ellipse", {
-      x: "+=5",
-      duration: 2,
-      ease: Power1.easeInOut,
-    })
-    shapesTL.to(".Ellipse", {
-      x: "-=5",
-      duration: 2,
-      ease: Power1.easeInOut,
-    })
-  }
-
-  const headerAnimation = () => {
-    const tl = gsap.timeline()
-    tl.from(contentRef.current.children, {
-      opacity: 0,
-      y: -50,
-      duration: 0.7,
-      stagger: 0.2,
-    }).to(contentRef.current.children[2].children[0], {
-      backgroundColor: "black",
-    })
-  }
   useEffect(() => {
-    headerAnimation()
+    headerAnimation(contentRef.current.children)
     floatAnimation()
   }, [])
   return (
-    <>
+    <div className='container-fluid p-0 d-flex flex-column'>
       <div className='landing-page bg-dark container-fluid px-0' id='home'>
         <div className='left'>
           <div className='left-content d-flex flex-column' ref={contentRef}>
             <h1 className='display-1'>Hi, I'm Ivaylo</h1>
-            <h2 className=' display-3'>Web Developer</h2>
+            <h2 className=' display-2'>Web Developer</h2>
             <div>
               <a
                 id='cto-button'
@@ -79,7 +39,11 @@ const LandingPage = () => {
           <BGImage />
         </div>
       </div>
-    </>
+      <Link className='scroll-btn d-flex flex-column align-items-center' to='aboutme'>
+        <i class='bi bi-arrow-down-circle'></i>
+        <span className='text-reset'>Learn more</span>
+      </Link>
+    </div>
   )
 }
 
