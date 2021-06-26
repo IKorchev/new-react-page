@@ -10,6 +10,7 @@ import Footer from "../src/pages/Footer"
 import SideComponent from "./components/SideComponent"
 
 function App() {
+ 
   return (
     <div className='bg-dark'>
       <SideComponent />

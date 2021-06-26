@@ -7,13 +7,13 @@ const Contact = () => {
   const [textInput, setTextInput] = useState("")
 
   return (
-    <div className='container mx-auto py-5 mt-2' id='contact'>
-      <h1 className='section-title my-5 py-3 border-bottom'>Contact</h1>
-      <div className='row justify-content-center'>
+    <div className='container mx-auto py-4 mt-2' id='contact'>
+      <h1 className='section-title my-5 pb-3 border-bottom'>Contact</h1>
+      <div className='row justify-content-around'>
         <form
           action='/sent'
           method='post'
-          className='d-flex flex-column col-md-4 text-dark '>
+          className='d-flex flex-column col-lg-4 text-dark '>
           <h2 className='h3 text-center my-3 text-white'>Contact Form</h2>
           <div className='form-floating mb-3'>
             <input
@@ -59,22 +59,30 @@ const Contact = () => {
             SUBMIT
           </button>
         </form>
-        <div className='col-md-4 text-center d-flex flex-column justify-content-around align-items-center'>
-          <div>
-            <h2 className='h3 text-center my-3'>Socials</h2>
-            <a href='https://github.com/IKorchev' target='_blank' rel='noreferrer'>
-              <i className='bi bi-github icons m-2 fs-2'></i>
+        <div className='socials-container col-lg-4 text-center d-flex flex-column justify-content-start'>
+          <h2 className='h3 text-start mb-5 text-white'>Links</h2>
+
+          <div className='social-links d-flex flex-column align-items-start'>
+            <a
+              href='https://github.com/IKorchev'
+              className='text-white my-3  fs-4 icons d-flex justify-content-center align-items-center'
+              target='_blank'
+              rel='noreferrer'>
+              <i className='bi bi-github mx-2'></i>GitHub
             </a>
             <a
               href='https://www.linkedin.com/in/ivaylo-korchev-b87bba19b/'
               target='_blank'
+              className='text-white my-3  fs-4 icons d-flex justify-content-center align-items-center'
               rel='noreferrer'>
-              <i className='bi bi-linkedin icons m-2 fs-2'></i>
+              <i className='bi bi-linkedin mx-2'></i>Linkedin
             </a>
-          </div>
-          <div>
-            <h2 className='h3 my-3'>Email me:</h2>
-            <p className='h6'>korchev94@gmail.com</p>
+
+            <a
+              href='mailto:korchev94@gmail.com'
+              className='text-white my-3 fs-4 icons d-flex justify-content-center align-items-center'>
+              <i className='bi bi-envelope-fill mx-2'></i>korchev94@gmail.com
+            </a>
           </div>
         </div>
       </div>

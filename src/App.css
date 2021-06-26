@@ -31,7 +31,7 @@ body::-webkit-scrollbar-thumb {
   --color-pink: rgb(255, 211, 198);
   --color-light: rgb(242, 242, 242);
   --color-purple: #232138;
-  --color-orange: #ff5234;
+  --color-orange: #ed7b45;
 }
 .lead {
   font-weight: 400;
@@ -108,33 +108,36 @@ body::-webkit-scrollbar-thumb {
   width: 60%;
   justify-content: space-around;
 }
-#cto-button {
-  background-color: #ff5234;
-  padding: 10px 20px;
-  font-size: 1.3rem;
-  font-weight: 500;
+
+.cto-buttons {
+  cursor: pointer !important;
   text-align: center;
-  width: 150px;
-  color: rgb(0, 0, 0);
-  text-decoration: none;
+  font-size: 1.3rem;
+  padding: 13px 26px;
   border-radius: 30px;
   border: 1px solid var(--color-purple);
   box-shadow: 1px 1px 8px rgba(0, 0, 0, 0.604);
+  text-decoration: none;
+  color: var(--color-purple);
 }
-#cto-button:hover {
-  background-color: #ff0c04 !important;
+.cto-buttons:hover,
+.cto-buttons:focus {
+  color: rgba(22, 22, 22, 0.734);
+}
+#cto-button {
+  background: var(--color-orange);
+  background: linear-gradient(
+    305deg,
+    rgba(237, 123, 69, 1) 30%,
+    rgba(162, 69, 237, 1) 200%
+  );
+  font-weight: 500;
+  width: 150px;
 }
 #cto2-button {
   margin-left: 20px;
-  color: black;
-  font-size: 1.2rem;
-  padding: 10px 20px;
-  border-radius: 30px;
 }
-#cto2-button:hover,
-#cto2-button:focus {
-  color: rgb(0, 0, 0);
-}
+
 .scroll-btn {
   font-size: 1.2rem !important;
   margin: 0 auto;
@@ -151,11 +154,9 @@ body::-webkit-scrollbar-thumb {
   color: #ffffff;
 }
 .sidebar a:hover {
-  color: #ff5234;
+  color: var(--color-orange);
 }
-.scroll-btn:hover {
-  color: #ff5234;
-}
+
 .left,
 .right {
   width: 100% !important;
@@ -197,7 +198,6 @@ body::-webkit-scrollbar-thumb {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
 }
-/* LANDING PAGE */
 
 .card-img-overlay {
   display: grid;
@@ -227,9 +227,8 @@ body::-webkit-scrollbar-thumb {
   color: black !important;
 }
 .icons {
-  color: white;
   height: 30px;
-  transition: opacity 0.5s ease;
+  transition: opacity 0.3s ease;
 }
 
 .icons:hover {
@@ -268,6 +267,10 @@ textarea {
   .nav-links {
     font-size: 2.5rem !important;
   }
+  .socials-container {
+    justify-content: center;
+    align-items: center;
+  }
   .sidebar {
     display: none !important;
   }
@@ -300,7 +303,8 @@ textarea {
     opacity: 0.1;
   }
   .left-content {
-    height: 300px;
+    margin-top: 20px !important;
+    height: 450px;
     margin: 100px auto;
   }
 
@@ -309,12 +313,20 @@ textarea {
     color: white;
     background-color: rgba(0, 0, 0, 0);
   }
+  .socials-container {
+    margin-top: 50px;
+  }
+  .social-links {
+    justify-content: center;
+    align-items: center !important;
+  }
 }
 
 @media only screen and (max-width: 992px) {
   .slick-slider {
     width: 85%;
   }
+
   .links {
     margin: 0 !important;
   }
@@ -353,10 +365,31 @@ textarea {
     width: 100% !important;
   }
   .left-content {
+    margin-top: 50px !important;
     width: 100%;
-    height: 250px;
+    height: 70%;
   }
   .skills-container {
     grid-template-columns: repeat(2, 1fr) !important;
+  }
+}
+@media (max-width: 500px) {
+  .cto-buttons {
+    width: 100% !important;
+  }
+  #cto2-button {
+    margin-left: 0;
+    margin-top: 20px;
+  }
+  .cto-buttons-container {
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+@media (max-width: 400px) {
+  .navbar-brand {
+    width: 100px;
   }
 }

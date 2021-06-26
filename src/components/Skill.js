@@ -56,7 +56,7 @@ const Skill = () => {
   }, [ref])
   return (
     <div className='row justify-content-center container mx-auto'>
-      <h1 className='section-title h1 mt-3 text-white px-0 border-bottom'>Skills</h1>
+      <h1 className='section-title h1 mt-3 text-white py-3 px-0 border-bottom'>Skills</h1>
       <div ref={ref} className='skills-container'>
         {skills.map((el, i) => {
           return (

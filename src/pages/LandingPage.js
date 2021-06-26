@@ -17,21 +17,23 @@ const LandingPage = () => {
           <div className='left-content d-flex flex-column' ref={contentRef}>
             <h1 className='display-1'>Hi, I'm Ivaylo</h1>
             <h2 className=' display-2'>Web Developer</h2>
-            <div>
+            <div className='cto-buttons-container'>
               <a
+                className='cto-buttons'
                 id='cto-button'
                 target='_blank'
                 rel='noreferrer'
                 href='https://linkedin.com/in/ivaylo-korchev'>
                 Contact me
               </a>
-              <a
+              <Link
+                className='cto-buttons'
                 id='cto2-button'
                 target='_blank'
                 rel='noreferrer'
-                href='https://linkedin.com/in/ivaylo-korchev'>
-                My GitHub
-              </a>
+                to='projects'>
+                View my work
+              </Link>
             </div>
           </div>
         </div>

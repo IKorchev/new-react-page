@@ -46,7 +46,6 @@ const Projects = () => {
   //prettier-ignore
   const numberBasedOnWidth = () => windowDimensions > 1300 ? 3 : windowDimensions > 992 ? 2 : 1;
   const settings = {
-    autoplay: true,
     dots: true,
     infinite: true,
     slidesToShow: numberBasedOnWidth(),
