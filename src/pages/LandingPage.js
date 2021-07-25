@@ -1,10 +1,19 @@
-import { useRef } from "react"
+import { useRef, useEffect } from "react"
 import { Link } from "react-scroll"
 import Navbar from "../components/Navbar"
 import BottomBlob from "../assets/Bottom-blob.svg"
+
+import gsap from "gsap"
 const LandingPage = () => {
   const contentRef = useRef(null)
-
+  useEffect(() => {
+    gsap.from(contentRef.current.children, {
+      x: -50,
+      opacity: 0,
+      stagger: 0.2,
+      ease: "power1.inOut",
+    })
+  }, [])
   return (
     <div className='landing-page-wrapper container-fluid p-0 d-flex flex-column'>
       <Navbar />
