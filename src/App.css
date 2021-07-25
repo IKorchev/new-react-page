@@ -83,7 +83,6 @@ body {
   background-size: contain;
   display: flex;
   justify-content: flex-start;
-  border-bottom: 1px solid black;
 }
 .landing-page-content {
   color: black;
