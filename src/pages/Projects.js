@@ -53,10 +53,8 @@ const Projects = () => {
     slidesToScroll: 1,
   }
   return (
-    <div className='container' id='projects'>
-      <h1 className='section-title px-0 h1 my-5 py-3 text-white border-bottom'>
-        Projects
-      </h1>
+    <div id='projects'>
+      <h1 className='px-0 h1 my-5 py-3 border-bottom'>Projects</h1>
       <div ref={sliderRef}>
         <Slider className='container' {...settings}>
           {data.map((project, i) => (

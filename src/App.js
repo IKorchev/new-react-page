@@ -1,6 +1,5 @@
 import "./App.css"
 // Pages
-import Navbar from "./components/Navbar"
 import LandingPage from "./pages/LandingPage"
 import Aboutme from "../src/pages/Aboutme"
 import Skill from "./components/Skill"
@@ -10,17 +9,17 @@ import Footer from "../src/pages/Footer"
 import SideComponent from "./components/SideComponent"
 
 function App() {
- 
   return (
-    <div className='bg-dark'>
+    <div>
       <SideComponent />
-      <Navbar />
       <LandingPage />
-      <Aboutme />
-      <Skill />
-      <Projects />
-      <Contact />
-      <Footer />
+      <main className='container mx-auto bg-white text-dark'>
+        <Aboutme />
+        <Skill />
+        <Projects />
+        <Contact />
+        <Footer />
+      </main>
     </div>
   )
 }

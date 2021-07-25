@@ -29,14 +29,12 @@ const Skill = () => {
     gsap.to(target, {
       duration: 0.5,
       scale: 1.1,
-      skewX: "-3deg",
     })
   }
   const reverseAnimation = (target) => {
     gsap.to(target, {
       duration: 0.5,
       scale: 1,
-      skewX: "0deg",
     })
   }
   useEffect(() => {
@@ -55,8 +53,8 @@ const Skill = () => {
     })
   }, [ref])
   return (
-    <div className='row justify-content-center container mx-auto'>
-      <h1 className='section-title h1 mt-3 text-white py-3 px-0 border-bottom'>Skills</h1>
+    <div>
+      <h1 className='h1 mt-3 px-0 py-3 border-bottom'>Skills</h1>
       <div ref={ref} className='skills-container'>
         {skills.map((el, i) => {
           return (

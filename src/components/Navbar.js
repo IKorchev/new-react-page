@@ -3,10 +3,10 @@ import { Link } from "react-scroll"
 import Logo from "../assets/Logo.svg"
 const Navbar = () => {
   return (
-    <nav class='navbar navbar-expand-lg bg-light'>
-      <div class='container-fluid'>
+    <nav class='navbar navbar-expand-xxl'>
+      <div class='container'>
         <Link to='navbar-collapse' className='navbar-brand'>
-          <img src={Logo} alt='Ivaylo Korchev (logo)' width='200px' height='auto' />
+          <img src={Logo} alt='Ivaylo Korchev (logo)' />
         </Link>
         <button
           className='navbar-toggler ms-auto'

@@ -3,7 +3,7 @@ import { Link } from "react-scroll"
 
 const Footer = () => {
   return (
-    <div className='footer text-center p-3 mt-1'>
+    <div className='footer text-center py-3 mt-1'>
       <Link to='navbar-collapse' className='text-secondary fs-3  fw-bold'>
         <i class='bi bi-arrow-up-circle'></i>
       </Link>

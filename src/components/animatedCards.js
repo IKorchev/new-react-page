@@ -3,17 +3,19 @@ import gsap from "gsap"
 const AnimatedCards = ({ project }) => {
   const ref = useRef(null)
 
-  const startAnimation = () => {
-    gsap.to(ref.current, {
-      opacity: 1,
-      duration: 0.2,
-    })
-  }
-  const reverseAnimation = () => {
-    gsap.to(ref.current, {
-      opacity: 0,
-      duration: 0.2,
-    })
+  const revealAnimation = (way) => {
+    const tl = gsap.timeline()
+    way &&
+      tl.to(ref.current, {
+        duration: 0.5,
+        opacity: 1,
+      })
+
+    !way &&
+      tl.to(ref.current, {
+        opacity: 0,
+        duration: 0.5,
+      })
   }
 
   return (
@@ -28,8 +30,8 @@ const AnimatedCards = ({ project }) => {
         <div
           //prettier-ignore
           ref={ref}
-          onMouseEnter={startAnimation}
-          onMouseLeave={reverseAnimation}
+          onMouseEnter={() => revealAnimation(true)}
+          onMouseLeave={() => revealAnimation(false)}
           className="card-img-overlay p-5">
           <h1 className="text-center">{project.title}</h1>
           <div >

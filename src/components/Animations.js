@@ -3,35 +3,6 @@ import { ScrollTrigger } from "gsap/all"
 
 gsap.registerPlugin(ScrollTrigger)
 
-export const floatAnimation = () => {
-  const tl = gsap.timeline({ repeat: -1 })
-  const shapesTL = gsap.timeline({ repeat: -1 })
-
-  tl.to("#Person", { y: "-=10", duration: 2, ease: Power1.easeInOut }).to("#Person", {
-    y: "+=10",
-    duration: 2,
-    ease: Power1.easeInOut,
-  })
-
-  shapesTL.to(".Rectangle", {
-    y: "-=15",
-    duration: 2,
-  })
-  shapesTL.to(".Rectangle", {
-    y: "+=15",
-    duration: 2,
-  })
-  shapesTL.to(".Ellipse", {
-    x: "+=5",
-    duration: 2,
-    ease: Power1.easeInOut,
-  })
-  shapesTL.to(".Ellipse", {
-    x: "-=5",
-    duration: 2,
-    ease: Power1.easeInOut,
-  })
-}
 
 export const headerAnimation = (ref) => {
   gsap.from(ref, {

@@ -1,7 +1,4 @@
-import React from "react"
-const BGImage = () => {
-  return (
-    <svg
+<svg
       className='right'
       xmlns='http://www.w3.org/2000/svg'
       width='1500'
@@ -144,7 +141,3 @@ const BGImage = () => {
         />
       </g>
     </svg>
-  )
-}
-
-export default BGImage
